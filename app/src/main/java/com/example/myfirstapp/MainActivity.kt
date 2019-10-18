@@ -18,7 +18,8 @@ class MainActivity : AppCompatActivity() {
     /** Called when the user taps the Send button */
     fun sendMessage(view: View) {
         val editText = findViewById<EditText>(R.id.editText)
-        val message = editText.text.toString()
+        val editTextTwo = findViewById<EditText>(R.id.editText2)
+        val message = (editText.text.toString()) + (editTextTwo.text.toString())
         val intent = Intent(this, DisplayMessageActivity::class.java).apply {
             putExtra(EXTRA_MESSAGE, message)
         }
